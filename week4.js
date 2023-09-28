@@ -1,4 +1,4 @@
-const https = require('http');
+const https = require('https');
 const fs = require('fs');
 const express = require('express');
 const startUp = require('./routes/startup');
@@ -16,7 +16,7 @@ const httpsOptions = {
 
 app = express();
 
-const server = https.createServer(app);
+const server = https.createServer(app, httpsOptions);
 
 app.use(express.json());
 app.use('/', startUp);
